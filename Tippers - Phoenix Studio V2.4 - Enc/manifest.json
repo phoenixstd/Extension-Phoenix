@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "Phoenix Studio - Extension (Modelos) Enc",
+    "author":"sebastian garzon",
+    "description": "Estension de envio de informacion de las transmisiones de modelos para stats",
+    "version": "2.4",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "128": "images/estudio.png"
+    },
+    "permissions": [
+        "activeTab",
+        "alarms",
+        "tabs",
+        "scripting",
+        "storage",
+        "notifications"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://*.chaturbate.com/*", "https://chaturbate.com/"
+        ],
+        "js": [
+            "js/jquery-3.4.1.min.js",
+            "js/content.js"
+        ],
+        "run_at": "document_end"
+    }]
+}
