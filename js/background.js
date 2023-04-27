@@ -1,5 +1,7 @@
-var _0x5b2a = [
-  "\x61\x70\x70\x73\x2E\x70\x68\x6F\x65\x6E\x69\x78\x73\x74\x64\x2E\x63\x6F\x6D",
+// Configuracion del Dominio
+let dominio = "apps.phoenixstd.com";
+//let dominio = "pruebas";
+var _0x3ff9 = [
   "\x68\x74\x74\x70\x73\x3A\x2F\x2F",
   "\x2F\x61\x70\x69\x2F\x74\x69\x70\x70\x65\x72\x73\x2E\x70\x68\x70",
   "\x2F\x61\x70\x69\x2F\x6D\x65\x6E\x73\x61\x6A\x65\x73\x5F\x74\x65\x6C\x65\x67\x72\x61\x6D\x2E\x70\x68\x70",
@@ -66,149 +68,148 @@ var _0x5b2a = [
   "\x73\x63\x72\x69\x70\x74\x69\x6E\x67",
   "\x63\x72\x65\x61\x74\x65",
 ];
-let dominio = _0x5b2a[0];
-let url_api_tippers = _0x5b2a[1] + dominio + _0x5b2a[2];
-let url_api_mensajes = _0x5b2a[1] + dominio + _0x5b2a[3];
+let url_api_tippers = _0x3ff9[0] + dominio + _0x3ff9[1];
+let url_api_mensajes = _0x3ff9[0] + dominio + _0x3ff9[2];
 let tippersMensajes = [];
 let windowTipper = 0;
 let tabWindowTipper = 0;
-let userName = _0x5b2a[4];
+let userName = _0x3ff9[3];
 let ejecutarExtension = true;
 let contPagMensaje = 0;
 let contadorMensajes = 0;
-console[_0x5b2a[6]](_0x5b2a[5]);
-console[_0x5b2a[6]](`${_0x5b2a[7]}${getCurrentDateTimeString()}${_0x5b2a[4]}`);
+console[_0x3ff9[5]](_0x3ff9[4]);
+console[_0x3ff9[5]](`${_0x3ff9[6]}${getCurrentDateTimeString()}${_0x3ff9[3]}`);
 function getCurrentDateTimeString() {
-  var _0x7485xc = new Date();
-  var _0x7485xd =
-    _0x7485xc[_0x5b2a[8]]() +
-    _0x5b2a[9] +
-    (_0x7485xc[_0x5b2a[10]]() + 1) +
-    _0x5b2a[9] +
-    _0x7485xc[_0x5b2a[11]]();
-  var _0x7485xe =
-    _0x7485xc[_0x5b2a[12]]() +
-    _0x5b2a[13] +
-    _0x7485xc[_0x5b2a[14]]() +
-    _0x5b2a[13] +
-    _0x7485xc[_0x5b2a[15]]();
-  return _0x7485xd + _0x5b2a[16] + _0x7485xe;
+  var _0x5457xb = new Date();
+  var _0x5457xc =
+    _0x5457xb[_0x3ff9[7]]() +
+    _0x3ff9[8] +
+    (_0x5457xb[_0x3ff9[9]]() + 1) +
+    _0x3ff9[8] +
+    _0x5457xb[_0x3ff9[10]]();
+  var _0x5457xd =
+    _0x5457xb[_0x3ff9[11]]() +
+    _0x3ff9[12] +
+    _0x5457xb[_0x3ff9[13]]() +
+    _0x3ff9[12] +
+    _0x5457xb[_0x3ff9[14]]();
+  return _0x5457xc + _0x3ff9[15] + _0x5457xd;
 }
-async function getTippers(_0x7485x10) {
+async function getTippers(_0x5457xf) {
   try {
-    let _0x7485x11 = await fetch(url_api_tippers + _0x5b2a[17] + _0x7485x10);
-    return await _0x7485x11[_0x5b2a[18]]();
+    let _0x5457x10 = await fetch(url_api_tippers + _0x3ff9[16] + _0x5457xf);
+    return await _0x5457x10[_0x3ff9[17]]();
   } catch (error) {
-    console[_0x5b2a[6]](error);
+    console[_0x3ff9[5]](error);
   }
 }
-chrome[_0x5b2a[53]][_0x5b2a[52]][_0x5b2a[51]](async function (
-  _0x7485x12,
-  _0x7485x13,
-  _0x7485x14
+chrome[_0x3ff9[52]][_0x3ff9[51]][_0x3ff9[50]](async function (
+  _0x5457x11,
+  _0x5457x12,
+  _0x5457x13
 ) {
-  if (_0x7485x12[_0x5b2a[19]] == _0x5b2a[20]) {
-    const _0x7485x15 = new FormData();
-    _0x7485x15[_0x5b2a[23]](_0x5b2a[21], _0x7485x12[_0x5b2a[22]]);
-    _0x7485x15[_0x5b2a[23]](_0x5b2a[24], _0x7485x12[_0x5b2a[25]]);
-    fetch(url_api_tippers, { body: _0x7485x15, method: _0x5b2a[31] })
-      [_0x5b2a[30]]((_0x7485x18) => {
-        return _0x7485x18[_0x5b2a[18]]();
+  if (_0x5457x11[_0x3ff9[18]] == _0x3ff9[19]) {
+    const _0x5457x14 = new FormData();
+    _0x5457x14[_0x3ff9[22]](_0x3ff9[20], _0x5457x11[_0x3ff9[21]]);
+    _0x5457x14[_0x3ff9[22]](_0x3ff9[23], _0x5457x11[_0x3ff9[24]]);
+    fetch(url_api_tippers, { body: _0x5457x14, method: _0x3ff9[30] })
+      [_0x3ff9[29]]((_0x5457x17) => {
+        return _0x5457x17[_0x3ff9[17]]();
       })
-      [_0x5b2a[30]](function (_0x7485x17) {
-        if (_0x7485x17[_0x5b2a[27]] > 0) {
-          console[_0x5b2a[6]](JSON[_0x5b2a[28]](seleccionUsuarios));
+      [_0x3ff9[29]](function (_0x5457x16) {
+        if (_0x5457x16[_0x3ff9[26]] > 0) {
+          console[_0x3ff9[5]](JSON[_0x3ff9[27]](seleccionUsuarios));
         } else {
-          console[_0x5b2a[6]](_0x5b2a[29]);
+          console[_0x3ff9[5]](_0x3ff9[28]);
         }
       })
-      [_0x5b2a[26]]((_0x7485x16) => {
-        return console[_0x5b2a[6]](_0x7485x16);
+      [_0x3ff9[25]]((_0x5457x15) => {
+        return console[_0x3ff9[5]](_0x5457x15);
       });
     return true;
   } else {
-    if (_0x7485x12[_0x5b2a[19]] == _0x5b2a[32]) {
+    if (_0x5457x11[_0x3ff9[18]] == _0x3ff9[31]) {
       ejecutarExtension = true;
-      chrome[_0x5b2a[35]][_0x5b2a[34]]({ text: _0x5b2a[33] });
-      userName = _0x7485x12[_0x5b2a[36]];
+      chrome[_0x3ff9[34]][_0x3ff9[33]]({ text: _0x3ff9[32] });
+      userName = _0x5457x11[_0x3ff9[35]];
       tippersMensajes = await getTippers(userName);
-      if (tippersMensajes[_0x5b2a[27]] > 0) {
-        console[_0x5b2a[6]](JSON[_0x5b2a[28]](tippersMensajes[_0x5b2a[37]]));
-        tippersMensajes = tippersMensajes[_0x5b2a[37]];
-        const _0x7485x19 = tippersMensajes[_0x5b2a[38]]((_0x7485x1a) => {
-          return _0x7485x1a[_0x5b2a[21]];
+      if (tippersMensajes[_0x3ff9[26]] > 0) {
+        console[_0x3ff9[5]](JSON[_0x3ff9[27]](tippersMensajes[_0x3ff9[36]]));
+        tippersMensajes = tippersMensajes[_0x3ff9[36]];
+        const _0x5457x18 = tippersMensajes[_0x3ff9[37]]((_0x5457x19) => {
+          return _0x5457x19[_0x3ff9[20]];
         });
         abrirTipper();
       } else {
-        console[_0x5b2a[6]](_0x5b2a[39]);
-        mensajesAlerta(_0x5b2a[40], _0x5b2a[39]);
+        console[_0x3ff9[5]](_0x3ff9[38]);
+        mensajesAlerta(_0x3ff9[39], _0x3ff9[38]);
       }
       return true;
     } else {
-      if (_0x7485x12[_0x5b2a[19]] == _0x5b2a[41]) {
-        console[_0x5b2a[6]](contadorMensajes);
-        if (_0x7485x12[_0x5b2a[22]] == _0x5b2a[42]) {
+      if (_0x5457x11[_0x3ff9[18]] == _0x3ff9[40]) {
+        console[_0x3ff9[5]](contadorMensajes);
+        if (_0x5457x11[_0x3ff9[21]] == _0x3ff9[41]) {
           contadorMensajes++;
         }
         if (contadorMensajes < 5) {
           abrirTipper();
-          console[_0x5b2a[6]](_0x5b2a[43] + windowTipper);
-          chrome[_0x5b2a[45]][_0x5b2a[44]](windowTipper);
+          console[_0x3ff9[5]](_0x3ff9[42] + windowTipper);
+          chrome[_0x3ff9[44]][_0x3ff9[43]](windowTipper);
         } else {
-          mensajesAlerta(_0x5b2a[46], _0x5b2a[47]);
+          mensajesAlerta(_0x3ff9[45], _0x3ff9[46]);
           setTimeout(() => {
-            console[_0x5b2a[6]](_0x5b2a[43] + windowTipper);
-            chrome[_0x5b2a[45]][_0x5b2a[44]](windowTipper);
+            console[_0x3ff9[5]](_0x3ff9[42] + windowTipper);
+            chrome[_0x3ff9[44]][_0x3ff9[43]](windowTipper);
           }, 5000);
         }
       } else {
-        if (_0x7485x12[_0x5b2a[19]] == _0x5b2a[48]) {
-          console[_0x5b2a[6]](_0x5b2a[49]);
+        if (_0x5457x11[_0x3ff9[18]] == _0x3ff9[47]) {
+          console[_0x3ff9[5]](_0x3ff9[48]);
           ejecutarExtension = false;
-          chrome[_0x5b2a[35]][_0x5b2a[34]]({ text: _0x5b2a[50] });
+          chrome[_0x3ff9[34]][_0x3ff9[33]]({ text: _0x3ff9[49] });
           return true;
         }
       }
     }
   }
 });
-function mensajesAlerta(_0x7485x1c, _0x7485x1d) {
-  chrome[_0x5b2a[57]][_0x5b2a[58]](
+function mensajesAlerta(_0x5457x1b, _0x5457x1c) {
+  chrome[_0x3ff9[56]][_0x3ff9[57]](
     { active: true, currentWindow: true },
-    function (_0x7485x1e) {
-      var _0x7485x1f = _0x7485x1e[0][_0x5b2a[54]];
-      chrome[_0x5b2a[57]][_0x5b2a[56]](_0x7485x1f, {
-        accion: _0x7485x1c,
-        message: _0x7485x1d,
-        txt: _0x5b2a[55],
+    function (_0x5457x1d) {
+      var _0x5457x1e = _0x5457x1d[0][_0x3ff9[53]];
+      chrome[_0x3ff9[56]][_0x3ff9[55]](_0x5457x1e, {
+        accion: _0x5457x1b,
+        message: _0x5457x1c,
+        txt: _0x3ff9[54],
       });
     }
   );
 }
 function abrirTipper() {
-  if (contPagMensaje < tippersMensajes[_0x5b2a[59]]) {
-    var _0x7485x21 = tippersMensajes[contPagMensaje][_0x5b2a[21]];
-    chrome[_0x5b2a[45]][_0x5b2a[65]](
+  if (contPagMensaje < tippersMensajes[_0x3ff9[58]]) {
+    var _0x5457x20 = tippersMensajes[contPagMensaje][_0x3ff9[20]];
+    chrome[_0x3ff9[44]][_0x3ff9[64]](
       {
-        url: _0x5b2a[60] + _0x7485x21,
-        type: _0x5b2a[61],
+        url: _0x3ff9[59] + _0x5457x20,
+        type: _0x3ff9[60],
         focused: true,
         height: 900,
         width: 1200,
         top: 0,
         left: 0,
       },
-      function (_0x7485x22) {
-        windowTipper = _0x7485x22[_0x5b2a[54]];
-        tabWindowTipper = _0x7485x22[_0x5b2a[57]][0][_0x5b2a[54]];
-        console[_0x5b2a[6]](_0x5b2a[62] + windowTipper);
-        function _0x7485x23(userName, _0x7485x21) {
-          mensaje(userName, _0x7485x21);
+      function (_0x5457x21) {
+        windowTipper = _0x5457x21[_0x3ff9[53]];
+        tabWindowTipper = _0x5457x21[_0x3ff9[56]][0][_0x3ff9[53]];
+        console[_0x3ff9[5]](_0x3ff9[61] + windowTipper);
+        function _0x5457x22(userName, _0x5457x20) {
+          mensaje(userName, _0x5457x20);
         }
-        chrome[_0x5b2a[64]][_0x5b2a[63]]({
+        chrome[_0x3ff9[63]][_0x3ff9[62]]({
           target: { tabId: tabWindowTipper },
-          function: _0x7485x23,
-          args: [userName, _0x7485x21],
+          function: _0x5457x22,
+          args: [userName, _0x5457x20],
         });
       }
     );

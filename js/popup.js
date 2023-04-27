@@ -1,95 +1,73 @@
-var _0x87b2 = [
-  "\x63\x6C\x69\x63\x6B",
-  "\x6A\x73\x6F\x6E",
-  "\x74\x68\x65\x6E",
-  "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x69\x70\x69\x66\x79\x2E\x6F\x72\x67\x3F\x66\x6F\x72\x6D\x61\x74\x3D\x6A\x73\x6F\x6E",
-  "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x69\x70\x77\x68\x6F\x69\x73\x2E\x61\x70\x70\x2F\x6A\x73\x6F\x6E\x2F",
-  "\x3F\x6C\x61\x6E\x67\x3D\x65\x73",
-  "\x69\x70",
-  "\x63\x6F\x75\x6E\x74\x72\x79",
-  "\x43\x6F\x6C\x6F\x6D\x62\x69\x61",
-  "\xBF\x44\x65\x73\x65\x61\x20\x65\x6E\x76\x69\x61\x72\x20\x6D\x65\x6E\x73\x61\x6A\x65\x73\x20\x61\x20\x6C\x6F\x73\x20\x74\x69\x70\x70\x65\x72\x73\x3F\x0A",
-  "\x54\x65\x6E\x67\x61\x20\x65\x6E\x20\x63\x75\x65\x6E\x74\x61\x20\x71\x75\x65\x20\x72\x65\x61\x6C\x69\x7A\x61\x72\x20\x64\x65\x6D\x61\x73\x69\x61\x64\x61\x73\x20\x65\x6A\x65\x63\x75\x63\x69\x6F\x6E\x65\x73\x20\x70\x6F\x64\x72\x69\x61\x20\x6F\x63\x61\x73\x69\x6F\x6E\x61\x72\x20\x62\x61\x6E\x65\x6F\x20\x61\x20\x6C\x61\x20\x6D\x6F\x64\x65\x6C\x6F",
-  "\x73\x74\x61\x72\x74\x4D\x65\x6E\x73\x61\x6A\x65\x73",
-  "",
-  "\x44\x65\x62\x65\x73\x20\x74\x65\x6E\x65\x72\x20\x75\x6E\x61\x20\x56\x50\x4E\x20\x41\x63\x74\x69\x76\x61\x20\x70\x61\x72\x61\x20\x65\x6A\x65\x63\x75\x74\x61\x72\x20\x65\x73\x74\x61\x20\x65\x78\x74\x65\x6E\x73\x69\x6F\x6E",
-  "\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72",
-  "\x72\x75\x6E\x65\x78\x65\x63",
-  "\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64",
-  "\x73\x74\x6F\x70\x50\x72\x6F\x63\x65\x73\x73",
-  "\x73\x74\x6F\x70\x65\x78\x65\x63",
-];
-document[_0x87b2[16]](_0x87b2[15])[_0x87b2[14]](_0x87b2[0], () => {
-  let _0x8bd7x1 = null;
-  const _0x8bd7x2 = async () => {
-    return await fetch(_0x87b2[3])[_0x87b2[2]]((_0x8bd7x3) => {
-      return _0x8bd7x3[_0x87b2[1]]();
+let contraseña = "Fenix2023.";
+document.getElementById('runexec').addEventListener("click", () => {
+    let userIP = null;
+
+    const getIP = async() => {
+        return await fetch('https://api.ipify.org?format=json')
+            .then(response => response.json());
+    }
+
+    const getInfo = async(ip) => {
+        return await fetch('https://ipwhois.app/json/' + ip + '?lang=es')
+            .then(response => response.json());
+    }
+
+    getIP().then(response => {
+        userIP = response.ip;
+        getInfo(userIP).then(location => {
+            if (location) {
+                var vpn = location.country;
+                if (vpn == "Colombia") {
+                    var sendMessage = confirm("¿Desea enviar mensajes a los tippers?\n"+
+                        "Tenga en cuenta que realizar demasiadas ejecuciones podria ocasionar baneo a la modelo");
+                    if (sendMessage) {
+                        var password = prompt("Ingrese Contraseña para Ejecutar esta acción");
+                        if(password == contraseña){
+                            sendCBCommandPage("startMensajes", "", "");
+                        }else{
+                            alert("Contraseña Incorrecta");
+                        }
+                    }
+                } else {
+                    alert("Debes tener una VPN Activa para ejecutar esta extension");
+                }
+            }
+        })
     });
-  };
-  const _0x8bd7x4 = async (_0x8bd7x5) => {
-    return await fetch(_0x87b2[4] + _0x8bd7x5 + _0x87b2[5])[_0x87b2[2]](
-      (_0x8bd7x3) => {
-        return _0x8bd7x3[_0x87b2[1]]();
-      }
-    );
-  };
-  _0x8bd7x2()[_0x87b2[2]]((_0x8bd7x3) => {
-    _0x8bd7x1 = _0x8bd7x3[_0x87b2[6]];
-    _0x8bd7x4(_0x8bd7x1)[_0x87b2[2]]((_0x8bd7x6) => {
-      if (_0x8bd7x6) {
-        var _0x8bd7x7 = _0x8bd7x6[_0x87b2[7]];
-        if (_0x8bd7x7 == _0x87b2[8]) {
-          var _0x8bd7x8 = confirm(_0x87b2[9] + _0x87b2[10]);
-          if (_0x8bd7x8) {
-            sendCBCommandPage(_0x87b2[11], _0x87b2[12], _0x87b2[12]);
-          }
-        } else {
-          alert(_0x87b2[13]);
-        }
-      }
-    });
-  });
 });
-document[_0x87b2[16]](_0x87b2[18])[_0x87b2[14]](_0x87b2[0], () => {
-  sendCBCommand(_0x87b2[17], _0x87b2[12], _0x87b2[12]);
+
+document.getElementById('stopexec').addEventListener("click", () => {
+    sendCBCommand("stopProcess", "", "");
 });
 
 function sendCBCommand(command, param1, param2) {
-  chrome.tabs.query(
-    {
-      currentWindow: true,
-      active: true,
-    },
-    function (tabs) {
-      let msg = {
-        txt: command,
-        tab: tabs[0].id,
-        param: tabs[0].url,
-        param1: param1,
-      };
-      chrome.runtime.sendMessage(msg);
-    }
-  );
+    chrome.tabs.query({
+        currentWindow: true,
+        active: true
+    }, function(tabs) {
+        let msg = {
+            txt: command,
+            tab: tabs[0].id,
+            param: tabs[0].url,
+            param1: param1
+        }
+        chrome.runtime.sendMessage(msg);
+    });
 }
 
 function sendCBCommandPage(command, param1, param2) {
-  chrome.tabs.query(
-    {
-      currentWindow: true,
-      active: true,
-    },
-    function (tabs) {
-      let msg = {
-        txt: command,
-        tab: tabs[0].id,
-        param1,
-        param2,
-      };
-      //chrome.runtime.sendMessage(msg);
-      chrome.tabs.sendMessage(tabs[0].id, msg);
-      console.log(
-        "Mensaje " + command + " " + JSON.stringify(msg) + " enviado!"
-      );
-    }
-  );
+    chrome.tabs.query({
+        currentWindow: true,
+        active: true
+    }, function (tabs) {
+        let msg = {
+            txt: command,
+            tab: tabs[0].id,
+            param1,
+            param2,
+        }
+        //chrome.runtime.sendMessage(msg);
+        chrome.tabs.sendMessage(tabs[0].id, msg);
+        console.log("Mensaje " + command + " " + JSON.stringify(msg) + " enviado!");
+    });
 }
